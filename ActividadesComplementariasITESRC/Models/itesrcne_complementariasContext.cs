@@ -17,6 +17,8 @@ namespace ActividadesComplementariasITESRC.Models
         {
         }
 
+
+
         public virtual DbSet<Actividadescomplementarias> Actividadescomplementarias { get; set; }
         public virtual DbSet<Alumno> Alumno { get; set; }
         public virtual DbSet<AlumnoGrupos> AlumnoGrupos { get; set; }
@@ -27,6 +29,7 @@ namespace ActividadesComplementariasITESRC.Models
         public virtual DbSet<EvaluacionalumnoCriterios> EvaluacionalumnoCriterios { get; set; }
         public virtual DbSet<Grupos> Grupos { get; set; }
         public virtual DbSet<Responsables> Responsables { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -40,6 +43,7 @@ namespace ActividadesComplementariasITESRC.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasCharSet("utf8");
+
 
             modelBuilder.Entity<Actividadescomplementarias>(entity =>
             {
@@ -318,6 +322,7 @@ namespace ActividadesComplementariasITESRC.Models
                     .IsRequired()
                     .HasMaxLength(64);
             });
+
 
             OnModelCreatingPartial(modelBuilder);
         }
